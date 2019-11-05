@@ -1,12 +1,11 @@
 module.exports = {
-  title: 'Ryosuke · Design & Development',
-  description: 'The portfolio and blog of Ryosuke',
+  title: 'Dylan Sherry',
+  description: 'The personal website of Dylan Sherry',
   keywords:
-    'web designer for hire, designer for hire, ryosuke design, oscar diaz, whoisryosuke, ryosuke hana',
-  url: 'http://whoisryosuke.com/',
+    'Dylan Sherry, technologist, musician, software',
+  url: 'http://dylansherry.com',
   image: 'http://whoisryosuke.com/assets/favicon/android-chrome-512x512.png',
   logo: 'http://whoisryosuke.com/assets/favicon/android-chrome-512x512.png',
-  twitter: '@whoisryosuke',
   fbAppID: '',
 
   // This is used for generating blog preview pages in `gatsby-node.js`.
