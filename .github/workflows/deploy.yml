@@ -1,0 +1,16 @@
+name: Deploy to GH Pages
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-20.04 # Use an older Ubuntu for better compatibility
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16 # The Goldilocks version
+      - run: npm install --legacy-peer-deps
+      - run: npm run deploy
+        env:
+          NODE_OPTIONS: "--no-experimental-fetch"
