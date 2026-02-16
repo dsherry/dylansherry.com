@@ -4,13 +4,15 @@ on:
     branches: [master]
 jobs:
   build:
-    runs-on: ubuntu-20.04 # Use an older Ubuntu for better compatibility
+    runs-on: ubuntu-latest  # Changed from 20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4 # Updated to v4
+      - uses: actions/setup-node@v4 # Updated to v4
         with:
-          node-version: 16 # The Goldilocks version
+          node-version: 16
+          cache: 'npm' # Optional: speeds up future builds
       - run: npm install --legacy-peer-deps
       - run: npm run deploy
         env:
           NODE_OPTIONS: "--no-experimental-fetch"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for gh-pages to push
